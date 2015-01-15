@@ -1,0 +1,93 @@
+@-moz-viewport { width: device-width; scale: 1; }
+@-ms-viewport { width: device-width; scale: 1; }
+@-o-viewport { width: device-width; scale: 1; }
+@-webkit-viewport { width: device-width; scale: 1; }
+@viewport { width: device-width; scale: 1; }
+
+html {
+  box-sizing: border-box;
+
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  background-color: #000;
+
+  font: normal 100%/1.5 sans-serif;
+  color: #fff;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.clock-face {
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    background-image:url(images/clock-face%20copy.svg);
+    position: relative;
+}
+
+.hand {
+    width: 14px;
+    position: absolute;
+    bottom: 50%; 
+    right: calc(150px - 7px); 
+    transition: all 6s linear;
+    transform-origin: bottom center;
+}
+
+.center {
+    width: 28px;
+    position: absolute;
+    bottom: calc(150px - 14px);
+    right: calc(150px - 14px);
+}
+
+.clock-face:target .hand-hour {
+    transform: rotate(360deg);
+}
+
+.clock-face:target .hand-minute {
+    transform: rotate(4320deg);
+}
+
+.forwards {
+    color: white;
+    background-color: green;
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin 1em;
+}
+
+.backwards {
+    color: white;
+    background-color: red;
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 1em;
+}
+
+.forwards:hover,
+.backwards:hover {
+    background-color: white;
+    color: black;
+    transition: all .5s linear;
+    opacity: 1;
+}
+
+.buttons {
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
